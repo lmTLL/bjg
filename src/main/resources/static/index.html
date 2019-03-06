@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>主页面</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="layui/css/layui.css">
+
+
+    <style type="text/css">
+        .ulhx li{
+            float: left;
+            margin-right: 10px;
+            text-align: center;
+            height: 60px;
+            padding-top: 2px;
+        }
+        li span{
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body style="background-color: #f2f2f2">
+<script type="application/javascript" src="js/jquery-3.3.1.js"></script>
+<script type="application/javascript" src="js/bootstrap.min.js"></script>
+<script type="application/javascript" src="layui/layui.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+
+    <div class="container">
+        <div class="row" style="height: 50px; background-color: #407380; margin-top: 20px">
+            <div class="col-lg-12">
+                <div class="row" >
+                    <div class="col-lg-6" style="padding-left: 50px">
+                        <ul class="list-unstyled ulhx">
+                            <li>
+                                <div style="padding-top: 4px">
+                                    <span>
+                                        <a href="index.html">
+                                            <img style="height: 40px" src="images/bjg.png">
+                                        </a>
+                                    </span>
+
+                                </div>
+                            </li>
+                            <li>
+                                <div style="padding-top: 10px;padding-left: 30px">
+                                    <a href="index.html">
+                                        <p style="font-size: 20px; color: #ffffff">
+                                            首页
+                                        </p>
+                                    </a>
+                                </div>
+                            </li>
+                            <li>
+                                <div style="padding-top: 10px;padding-left: 30px">
+                                    <a href="index.html">
+                                        <p style="font-size: 20px; color: #ffffff">
+                                            淘宝
+                                        </p>
+                                    </a>
+                                </div>
+                            </li>
+                            <li>
+                                <div style="padding-top: 10px;padding-left: 30px">
+                                    <a href="index.html">
+                                        <p style="font-size: 20px; color: #ffffff">
+                                            京东
+                                        </p>
+                                    </a>
+                                </div>
+                            </li>
+                            <li>
+                                <div style="padding-top: 10px;padding-left: 30px">
+                                    <a href="index.html">
+                                        <p style="font-size: 20px; color: #ffffff">
+                                            拼多多
+                                        </p>
+                                    </a>
+                                </div>
+                            </li>
+
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-6" style="float: right">
+                        <ul class="list-unstyled ulhx">
+                            <li>
+                                <div style="padding-top: 3px; padding-left: 300px">
+                                    <a href="admin.html">
+                                        <img src="http://img4.imgtn.bdimg.com/it/u=3863710847,2820277857&fm=200&gp=0.jpg" alt="..." width="40px" height="40px" class="img-circle">
+
+                                        <span style="font-size: 20px; color: #ffffff">
+                                            用户名
+                                        </span>
+                                    </a>
+                                </div>
+
+                            </li>
+                            <li>
+                                <div style="padding-top: 10px;padding-left: 50px">
+                                    <a href="index.html">
+                                        <p style="font-size: 20px; color: #ffffff">
+                                            退出
+                                        </p>
+                                    </a>
+                                </div>
+                            </li>
+
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row" style="background-color: #ffffff;height: 90px">
+            <div class="col-lg-2">
+
+            </div>
+            <form id="fm1" action="" onsubmit="return false;">
+            <div class="col-lg-6" style="padding-bottom: 30px">
+                <div class="input-group" style="margin-top: 20px">
+                    <span class="input-group-addon"> <span class="glyphicon glyphicon-search" aria-hidden="true"></span></span>
+                    <input type="text" name="keyword" class="form-control" placeholder="搜索关键词...">
+                    <span class="input-group-btn">
+                        <a href="javascript:onsearch()" class="layui-btn layui-btn-sm layui-btn-normal">查询</a>
+
+                    </span>
+                </div>
+            </div>
+            </form>
+            <div class="col-lg-4">
+                <div class="input-group" style="margin-top: 20px">
+                    <span class="input-group-btn" style="padding-left: 160px">
+                        <a href="pullgoos.html">
+                            <button class="btn btn-default" type="button" style="background-color: #407380; color: #ffffff; width: 100px">
+                            <span>
+                                添加商品
+                            </span>
+                        </button>
+                        </a>
+
+                    </span>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row" style="background-color: #ffffff;margin-top: 20px; height: 45px">
+            <div class="col-lg-12" style="padding-left: 50px">
+                <ul class="list-unstyled ulhx">
+
+                    <li>
+                        <div style="padding-top: 10px;padding-left: 30px">
+                            <button class="layui-btn layui-btn-radius layui-btn-primary" style="margin-top: -10px">
+                                <a href="index.html">
+                                    <p style="font-size: 15px; color: #000000">
+                                        全部分类
+                                    </p>
+                                </a>
+                            </button>
+                        </div>
+                    </li>
+                    <div id="divdata" >
+
+                    <li v-for="t in obj1.data" @click="spdetail1(t.id)">
+                        <div style="padding-top: 10px;padding-left: 30px" >
+                            <button class="layui-btn layui-btn-radius layui-btn-primary" style="margin-top: -10px">
+                                <p style="font-size: 15px; color: #000000">
+                                    <span>{{t.type}}</span>
+                                </p>
+                            </button>
+                        </div>
+                    </li>
+
+                    </div>
+
+                </ul>
+            </div>
+    </div>
+
+    <div >
+        <div id="dvdata" class="row" style="margin-top: 20px">
+            <div class="col-lg-3" style="margin-top: 30px;background-color: #f2f2f2"  v-for="p in obj.data" @click="spdetail(p.id)">
+                <div style="height: 200px">
+                    <div class="row" >
+                        <div class="col-lg-12" style="background-color: #f2f2f2">
+                            <img :src=p.picture width="100%" height="200px"/>
+                        </div>
+                        <div class="col-lg-12" style="background-color: #ffffff;margin-left: 15px;width: 263px;height: 40px">
+                            <a href="https://s.click.taobao.com/t?e=m%3D2%26s%3DvNyH%2F9%2B0R7scQipKwQzePOeEDrYVVa64XoO8tOebS%2Bfjf2vlNIV67jp3uvqnJPmNLzKPa%2Ff2nu9CsNV6GWz%2B8VUx8%2BFSzoEaJOkIs%2FRKhrcXp9GJasdwUHEumm%2B6nHzyiM9nxYkhT7uZSW8QS28nh%2BBIIrxx6gpRlw6LmJeOerZ8Qt66ItCAFCg%2F%2BsCdWkBWZaeZ6D2Lsw807daI%2F5irbIt4XNWIP8KZxiXvDf8DaRs%3D" class="good-title" target="_blank">{{p.goodsname}} {{p.details}}</a>
+                        </div>
+                        <div style="padding-left: 15px;margin-top: 10px;margin-left: 15px;background-color: #ffffff;width: 263px">
+
+                            <span style="color: red;">￥{{p.price}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!--分页-->
+            <div class="row" >
+                <div class="col-lg-12" style="margin-top: 30px">
+                    <div id="dvpage" style="text-align: center"></div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+
+    </div>
+
+
+
+<script>
+
+
+    var layer;
+    layui.use(['laypage','layer'], function(){
+        var laypage = layui.laypage;
+
+        //执行一个laypage实例
+        laypage.render({
+            elem: 'dvpage' //注意，这里的 test1 是 ID，不用加 # 号
+            ,count: 1000 //数据总数，从服务端得到
+        });
+    });
+
+
+
+
+$(function (){
+    $.ajax({
+        url:"selectAllGoods.do",
+        method:"get",
+        async: false,
+        success:function (data) {
+            if(data.code == 1){
+                ladate(data.info);
+            }
+        }
+
+    })
+})
+
+    function onsearch() {
+        $.ajax({
+            type:"get",
+            url:"findAllLike.do",
+            data:$("form").serialize(),
+            dataType:"json",
+            async: false,
+            success:function (data) {
+                if(data.code==1){
+                    ladate(data.info);
+                }
+            }
+        })
+    }
+
+    var appData=new Vue({
+        el:"#dvdata",
+        data:{
+            obj:{
+                code:1,
+                data:[]
+            }
+        },
+        methods:{
+            spdetail:function (id) {
+                layer.msg('你查看商品：id='+id);
+
+            }
+        }
+
+    })
+
+    function ladate(infos) {
+       appData.obj.data=infos;
+    }
+
+    function ladate1(infos) {
+        var appData=new Vue({
+            el:"#dvdata",
+            data:{
+                obj:{
+                    code:1,
+                    data:infos
+                }
+            },
+            methods:{
+                spdetail:function (id) {
+                    layer.msg('你查看商品：id='+id);
+
+                }
+            }
+
+        })
+    }
+
+
+
+    $(function (){
+        $.ajax({
+            url:"selectAllType.do",
+            method:"get",
+            async: false,
+            success:function (data) {
+                if(data.code == 1){
+                    typedate(data.info);
+                }
+            }
+
+        })
+    })
+
+    function typedate(infos1) {
+        var divdata=new Vue({
+            el:"#divdata",
+            data:{
+                obj1:{
+                    code:1,
+                    data:infos1
+                }
+            },
+            methods:{
+                spdetail1:function (id) {
+                   /* layer.msg('你查看商品：id='+id);*/
+                    $.ajax({
+                        type:"get",
+                        url:"selectByType.do",
+                        data:"id="+id,
+                        dataType:"json",
+                        async: false,
+                        success:function (data) {
+                            if(data.code==1){
+                                ladate(data.info);
+                            }
+                        }
+                    })
+                }
+            }
+        })
+    }
+
+
+
+</script>
+
+
+
+</body>
+</html>

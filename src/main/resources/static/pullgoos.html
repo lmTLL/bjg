@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>发布宝贝</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="layui/css/layui.css">
+    <style type="text/css">
+        .ulhx li{
+            float: left;
+            margin-right: 10px;
+            text-align: center;
+            height: 60px;
+            padding-top: 2px;
+        }
+        li span{
+            margin-top: 30px;
+        }
+
+        .publish-main {
+            background-color: #fff;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            border-bottom: #e5e5e5 solid 1px;
+            border-right: #e5e5e5 solid 1px;
+            padding: 20px 50px;
+        }
+    </style>
+
+</head>
+<body style="background-color: #f2f2f2">
+<script type="application/javascript" src="js/bootstrap.min.js"></script>
+<script type="application/javascript" src="layui/layui.js"></script>
+<div class="container">
+    <div class="row" style="height: 50px; background-color: #407380; margin-top: 20px">
+        <div class="col-lg-12">
+            <div class="row" >
+                <div class="col-lg-6" style="padding-left: 50px">
+                    <ul class="list-unstyled ulhx">
+                        <li>
+                            <div style="padding-top: 4px">
+                                    <span>
+                                        <a href="index.html">
+                                            <img style="height: 40px" src="images/bjg.png">
+                                        </a>
+                                    </span>
+
+                            </div>
+                        </li>
+                        <li>
+                            <div style="padding-top: 10px;padding-left: 30px">
+                                <a href="index.html">
+                                    <p style="font-size: 20px; color: #ffffff">
+                                        首页
+                                    </p>
+                                </a>
+                            </div>
+                        </li>
+                        <li>
+                            <div style="padding-top: 10px;padding-left: 30px">
+                                <a href="index.html">
+                                    <p style="font-size: 20px; color: #ffffff">
+                                        淘宝
+                                    </p>
+                                </a>
+                            </div>
+                        </li>
+                        <li>
+                            <div style="padding-top: 10px;padding-left: 30px">
+                                <a href="index.html">
+                                    <p style="font-size: 20px; color: #ffffff">
+                                        京东
+                                    </p>
+                                </a>
+                            </div>
+                        </li>
+                        <li>
+                            <div style="padding-top: 10px;padding-left: 30px">
+                                <a href="index.html">
+                                    <p style="font-size: 20px; color: #ffffff">
+                                        拼多多
+                                    </p>
+                                </a>
+                            </div>
+                        </li>
+
+                    </ul>
+                </div>
+
+                <div class="col-lg-6" style="float: right">
+                    <ul class="list-unstyled ulhx">
+                        <li>
+                            <div style="padding-top: 3px; padding-left: 300px">
+                                <a href="index.html">
+                                    <img src="http://img4.imgtn.bdimg.com/it/u=3863710847,2820277857&fm=200&gp=0.jpg" alt="..." width="40px" height="40px" class="img-circle">
+
+                                    <span style="font-size: 20px; color: #ffffff">
+                                            用户名
+                                        </span>
+                                </a>
+                            </div>
+
+                        </li>
+                        <li>
+                            <div style="padding-top: 10px;padding-left: 50px">
+                                <a href="index.html">
+                                    <p style="font-size: 20px; color: #ffffff">
+                                        退出
+                                    </p>
+                                </a>
+                            </div>
+                        </li>
+
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="row" style="margin-top: 40px">
+        <div class="col-lg-12" style="">
+            <div style="height: 50px; padding-top: 10px;background-color: #ffffff ;text-align: center">
+                    <span style="color: #000000; font-size: 20px">
+                        发布 宝贝
+                    </span>
+            </div>
+        </div>
+
+    </div>
+
+    <!--<div class="publish-main layui-form layui-form-pane" style="margin-top: 40px;background-color: #ffffff">
+        <form style="margin-top: 20px" class="layui-form" action="">
+            <div style="padding-left: 450px">
+                <input type="file" style="height: 150px;width: 150px;border:2px solid #00FF00"/>
+            </div>
+
+            <div class="layui-form-item" >
+                <label class="layui-form-label" style="width: 100px">宝贝名称</label>
+                <div class="layui-input-block">
+                    <input type="text" name="title" required  lay-verify="required" placeholder="请输入宝贝名" style="width: 200px" autocomplete="off" class="layui-input">
+                </div>
+                <div class=" layui-word-aux layui-input-block">最多只能输入14个字</div>
+            </div>
+
+            <div class="layui-form-item">
+                <label class="layui-form-label" style="width: 100px">所属类型</label>
+                <div class="layui-input-block" style="width: 200px">
+                    <select name="city" lay-verify="required">
+                        <option value=""></option>
+                        <option value="0">北京</option>
+                        <option value="1">上海</option>
+                        <option value="2">广州</option>
+                        <option value="3">深圳</option>
+                        <option value="4">杭州</option>
+                    </select>
+                </div>
+            </div>
+
+
+            <div class="layui-form-item layui-form-text">
+                <label class="layui-form-label" style="width: 100px">详细介绍</label>
+                <div class="layui-input-block">
+                    <textarea name="desc" placeholder="请输入内容" class="layui-textarea"></textarea>
+                </div>
+            </div>
+
+            <div class="layui-form-item input-line"  id="price1">
+                <label class="layui-form-label" style="width: 100px">价格</label>
+                <div class="layui-input-line">
+                    <input type="text" style="width: 100px" name="title" autocomplete="off" placeholder="请输入价格" class="layui-input price">
+                </div>
+                <div class="layui-form-mid layui-word-aux">元</div>
+
+            </div>
+
+
+
+
+
+
+            <div class="layui-form-item">
+                <div class="layui-input-block">
+                    <button class="layui-btn" lay-submit lay-filter="formDemo">立即提交</button>
+                    <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+**************************************************************************************************************-->
+    <form style="margin-top: 20px" class="layui-form" action="saveGoods.do" method="post" enctype="multipart/form-data">
+
+    <div class="publish-main layui-form layui-form-pane">
+        <div style="padding-left: 450px">
+        <input type="file" style="height: 150px;width: 150px;border:2px solid #00FF00"/>
+    </div>
+        <!--<div class="input-line image">
+            <div class="layui-box layui-upload-button">
+                <form target="layui-upload-iframe" method="post" key="set-mine" enctype="multipart/form-data" action="/user/publish/upload">
+                    <input type="file" name="info" class="layui-upload-file info-img-upload">
+                </form>
+                <span class="layui-upload-icon">
+                    <i class="layui-icon"></i>"上传图片"
+                </span>
+            </div>
+        </div>-->
+
+        <div class="layui-form-item input-line">
+            <label class="layui-form-label">商品名称</label>
+            <div class="layui-input-inline" style="width: 390px">
+                <input type="text" name="goodsname" autocomplete="off" placeholder="请输入商品名称" class="layui-input goods-title">
+            </div>
+            <div class="layui-form-mid layui-word-aux">14个字以内</div>
+        </div>
+        <div class="layui-form-item layui-form-text input-line">
+            <label class="layui-form-label good-description">商品详情</label>
+            <div class="layui-input-block">
+                <textarea name="details" placeholder="请输入商品详情" class="layui-textarea goods-des"></textarea>
+            </div>
+        </div>
+        <div class="layui-form-item input-line" id="price">
+            <label class="layui-form-label">价格</label>
+            <div class="layui-input-inline">
+                <input type="text" name="price" autocomplete="off" placeholder="请输入价格" class="layui-input price">
+            </div>
+            <div class="layui-form-mid layui-word-aux">元　　　</div>
+            <label class="layui-form-label">原价</label>
+            <div class="layui-input-inline">
+                <input type="text" name="oprice" autocomplete="off" placeholder="请输入原价" class="layui-input original-price">
+            </div>
+            <div class="layui-form-mid layui-word-aux">元　　　</div>
+            <a href="javascript:" class="add-original-link layui-btn layui-btn-small"><i class="layui-icon" style="color: #fff;">&#xe608;</i> 添加原购买链接</a>
+            <a href="javascript:" class="close-original-link layui-btn layui-btn-small layui-btn-danger" style="display: none;">关闭购买链接</a>
+        </div>
+        <div class="layui-form-item input-line" id="original-link" style="display: none;">
+            <label class="layui-form-label">原购买链接</label>
+            <div class="layui-input-block">
+                <input type="text" name="linkaddress" autocomplete="off" placeholder="请输入原购买链接" class="layui-input original-link">
+            </div>
+        </div>
+        <div class="layui-form-item input-line">
+            <label class="layui-form-label">分类</label>
+            <div class="layui-input-inline">
+                <select name="categorys" id="categorys">
+                    <option value="">请选择分类</option>
+
+                    <option data-cid="1" value="1">手机</option>
+
+                    <option data-cid="2" value="2">电脑</option>
+
+                    <option data-cid="4" value="4">配件</option>
+
+                    <option data-cid="5" value="5">电器</option>
+
+                    <option data-cid="6" value="6">书籍</option>
+
+                    <option data-cid="7" value="7">娱乐</option>
+
+                    <option data-cid="8" value="8">运动</option>
+
+                    <option data-cid="9" value="9">代步</option>
+
+                </select>
+            </div>
+        </div>
+
+        <div class="layui-form-item input-line" id="address">
+            <label class="layui-form-label">交易地址</label>
+            <div class="layui-input-block">
+                <input type="text" name="tradingaddress" autocomplete="off" placeholder="请输入交易地址" class="layui-input goods-address">
+            </div>
+        </div>
+        <div class="layui-form-item input-line" id="phoneNumber">
+            <label class="layui-form-label">手机号</label>
+            <div class="layui-input-inline">
+                <input type="text" name="" autocomplete="off" placeholder="请输入手机号" class="layui-input phone-number" >
+            </div>
+            <label class="layui-form-label">QQ号</label>
+            <div class="layui-input-inline">
+                <input type="text" name="" autocomplete="off" placeholder="请输入QQ号" class="layui-input qq-number">
+            </div>
+            <label class="layui-form-label">微信号</label>
+            <div class="layui-input-inline">
+                <input type="text" name="" autocomplete="off" placeholder="请输入微信号" class="layui-input wx-number">
+            </div>
+        </div>
+        <!-- <div class="layui-form-item input-line" id="qqNumber">
+            <label class="layui-form-label">QQ号</label>
+            <div class="layui-input-inline">
+                <input type="text" name="title" autocomplete="off" placeholder="请输入QQ号" class="layui-input">
+            </div>
+          </div>
+        <div class="layui-form-item input-line" id="wxNumber">
+            <label class="layui-form-label">微信号</label>
+            <div class="layui-input-inline">
+                <input type="text" name="title" autocomplete="off" placeholder="请输入微信号" class="layui-input">
+            </div>
+          </div> -->
+        <div class="publish-submit" style="contain: content">
+            <button class="layui-btn submit">确认发布</button>
+            <button type="reset" class="layui-btn" style="width: 100px">重置</button>
+        </div>
+    </div>
+    </form>
+
+
+
+    </div>
+
+
+
+
+    <script>
+        //Demo
+        layui.use(['form','element'], function(){
+            var form = layui.form;
+            var element=layui.element;
+            //监听提交
+            form.on('submit(formDemo)', function(data){
+                layer.msg(JSON.stringify(data.field));
+                window.location.href="index.html";
+                return false;
+            });
+        });
+    </script>
+
+</div>
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>个人信息</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="layui/css/layui.css">
+
+    <style type="text/css">
+        .ulhx li {
+            float: left;
+            margin-right: 10px;
+            text-align: center;
+            height: 60px;
+            padding-top: 2px;
+        }
+
+        li span {
+            margin-top: 30px;
+        }
+
+        .sider-nav ul li {
+            text-align: center;
+            line-height: 40px;
+            display: block;
+            text-decoration: none;
+            text-decoration-line: none;
+            text-decoration-style: initial;
+            text-decoration-color: initial;
+            margin: 20px;
+            padding: 0;
+            font-family: 微软雅黑;
+            font-size: 14px;
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body style="background-color: #f2f2f2">
+<script type="application/javascript" src="js/bootstrap.min.js"></script>
+<script type="application/javascript" src="layui/layui.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+<script type="application/javascript" src="js/jquery-3.3.1.js"></script>
+<div class="container">
+    <div class="row" style="height: 50px; background-color: #407380; margin-top: 20px">
+        <div class="col-lg-12">
+            <div class="row">
+                <div class="col-lg-6" style="padding-left: 50px">
+                    <ul class="list-unstyled ulhx">
+                        <li>
+                            <div style="padding-top: 4px">
+                                    <span>
+                                        <a href="index.html">
+                                            <img style="height: 40px" src="images/bjg.png">
+                                        </a>
+                                    </span>
+
+                            </div>
+                        </li>
+                        <li>
+                            <div style="padding-top: 10px;padding-left: 30px">
+                                <a href="index.html">
+                                    <p style="font-size: 20px; color: #ffffff">
+                                        首页
+                                    </p>
+                                </a>
+                            </div>
+                        </li>
+                        <li>
+                            <div style="padding-top: 10px;padding-left: 30px">
+                                <a href="index.html">
+                                    <p style="font-size: 20px; color: #ffffff">
+                                        淘宝
+                                    </p>
+                                </a>
+                            </div>
+                        </li>
+                        <li>
+                            <div style="padding-top: 10px;padding-left: 30px">
+                                <a href="index.html">
+                                    <p style="font-size: 20px; color: #ffffff">
+                                        京东
+                                    </p>
+                                </a>
+                            </div>
+                        </li>
+                        <li>
+                            <div style="padding-top: 10px;padding-left: 30px">
+                                <a href="index.html">
+                                    <p style="font-size: 20px; color: #ffffff">
+                                        拼多多
+                                    </p>
+                                </a>
+                            </div>
+                        </li>
+
+                    </ul>
+                </div>
+
+                <div class="col-lg-6" style="float: right">
+                    <ul class="list-unstyled ulhx">
+                        <li>
+                            <div style="padding-top: 3px; padding-left: 300px">
+                                <a>
+                                    <img src="http://img4.imgtn.bdimg.com/it/u=3863710847,2820277857&fm=200&gp=0.jpg"
+                                         alt="..." width="40px" height="40px" class="img-circle">
+
+                                    <span style="font-size: 20px; color: #ffffff">
+                                            用户名
+                                        </span>
+                                </a>
+                            </div>
+
+                        </li>
+                        <li>
+                            <div style="padding-top: 10px;padding-left: 50px">
+                                <a href="index.html">
+                                    <p style="font-size: 20px; color: #ffffff">
+                                        退出
+                                    </p>
+                                </a>
+                            </div>
+                        </li>
+
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div>
+        <div class="row" style="margin-top: 20px;margin-left:50px; background-color:#ffffff;width: 220px;height: 500px">
+            <div style="margin-left: 32px;margin-top: 25px">
+                <img style="background-color: #4cae4c"
+                     src="http://img4.imgtn.bdimg.com/it/u=3863710847,2820277857&fm=200&gp=1.jpg" width="160px"
+                     height="160px" alt="..." class="img-circle" border="2px">
+            </div>
+
+            <div class="row">
+                <div style="margin-top: 10px;text-align: center;font-size: 15px">
+
+                    <h5>
+                        <a href="index.html">
+                            用户
+                        </a>
+                    </h5>
+                    <hr style="border-color: #0C0C0C;border-right: 5px;width: 50%;text-align: center;margin-top: 30px;margin-left: 60px">
+
+                </div>
+            </div>
+
+
+            <div class="sider-nav">
+                <ul>
+                    <li>
+                        <a href="like.html">我想要的</a>
+                    </li>
+                    <li>
+                        <a href="mypull.html">我发布的</a>
+                    </li>
+                    <li>
+                        <a href="admin.html">个人信息</a>
+                    </li>
+                    <li>
+                        <a href="index.html">主页</a>
+                    </li>
+
+                    <!--<li>
+                        <div class="col-sm-offset-2 col-sm-10">
+                            <button type="" class="btn btn-default" style="width: 100px;margin-top: 20px;border-style:hidden">收藏宝贝</button>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="col-sm-offset-2 col-sm-10">
+                            <button type="" class="btn btn-default" style="width: 100px;margin-top: 20px;border-style:hidden">个人信息</button>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="col-sm-offset-2 col-sm-10">
+                            <button type="submit" href="www.baidu.com" class="btn btn-default" style="width: 100px;margin-top: 20px;border-style:hidden">意见反馈</button>
+                        </div>
+                    </li>-->
+
+                </ul>
+            </div>
+
+
+        </div>
+
+        <div class="row">
+            <div  style="margin-top: -500px;margin-left:350px; background-color:#ffffff;width: 750px;height: 500px">
+                <form id="fm" class="layui-form" style="margin-top: 20px" method="post" action="/updateInfo.do"  enctype="multipart/form-data">
+                    <!-- 提示：如果你不想用form，你可以换成div等任何一个普通元素 -->
+                    <div id="div1" class="layui-form-item" style="padding-top: 30px">
+                        <label class="layui-form-label" style="padding-top: 50px;width: 100px">
+                            头像
+                        </label>
+                        <div class=" layui-form-pane">
+
+                            <div style="margin-left:100px">
+                                <input type="file" style="height: 100px;width: 100px;border:2px solid #00FF00"/>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label" style="width: 100px">昵称</label>
+                        <div class="layui-input-inline" style="margin-left: 0px">
+                            <input v-model="name" type="text" name="name" autocomplete="off" class="layui-input" style="">
+
+                        </div>
+                    </div>
+
+                    <div class="layui-form-item">
+                        <label class="layui-form-label" style="width: 100px">个性签名</label>
+                        <div class="layui-input-block" style="margin-left: 100px">
+                            <input v-model="signature" type="text" name="signature" autocomplete="off" class="layui-input" style="">
+                        </div>
+                    </div>
+
+
+                    <div class="layui-form-item">
+                        <label class="layui-form-label" style="width: 100px">性别</label>
+                        <div class="layui-input-block">
+                            <input type="radio" name="sex" value="0" title="男">
+                            <input type="radio" name="sex" value="1" title="女" checked>
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label" style="width: 100px">生日</label>
+                        <div class="layui-input-inline" style="margin-left: 0px">
+                            <input v-model="birthday" type="date" name="birthday" autocomplete="off" class="layui-input" style="">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label" style="width: 100px">手机号</label>
+                        <div class="layui-input-inline" style="margin-left: 0px">
+                            <input v-model="phone" type="text" name="phone" autocomplete="off" class="layui-input" style="">
+
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label" style="width: 100px">QQ</label>
+                        <div class="layui-input-inline" style="margin-left: 0px">
+                            <input v-model="qq" type="text" name="qq" autocomplete="off" class="layui-input" style="">
+
+                        </div>
+                    </div>
+
+
+                    <div class="layui-form-item">
+                        <div class="layui-input-block">
+                            <button class="layui-btn" lay-submit lay-filter="formDemo" style="background-color: #407380">立即提交
+                            </button>
+                            <button type="reset" class="layui-btn layui-btn-primary"
+                                    style="width: 100px;background-color:#407380;color: white ">重置
+                            </button>
+                        </div>
+                    </div>
+                    <!-- 更多表单结构排版请移步文档左侧【页面元素-表单】一项阅览 -->
+                </form>
+
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+<script>
+
+
+    var layer;
+    layui.use(['laypage','layer'], function(){
+        var laypage = layui.laypage;
+
+        //执行一个laypage实例
+        laypage.render({
+            elem: 'dvpage' //注意，这里的 test1 是 ID，不用加 # 号
+            ,count: 1000 //数据总数，从服务端得到
+        });
+    });
+
+
+
+
+    $(function (){
+        $.ajax({
+            url:"findMyInfo.do",
+            method:"post",
+            success:function (data) {
+                if(data.code == 1){
+                    var infos=null;
+                    infos=data.info;
+
+                    var vue = new Vue({
+                        el:"#fm",
+                        data:{
+                            name:infos.name,
+                            signature:infos.signature,
+                            sex:infos.sex,
+                            birthday:infos.birthday,
+                            phone:infos.phone,
+                            qq:infos.qq,
+
+                        }
+                    })
+                }
+            }
+
+        })
+    })
+
+
+
+
+    /*function ladate(infos) {
+        var appData=new Vue({
+            el:"#div1",
+            data:{
+                obj:{
+                    code:1,
+                    data:infos
+                }
+            },
+            methods:{
+                spdetail:function (id) {
+                    layer.msg('你查看商品：id='+id);
+                }
+            }
+        })
+    }*/
+
+
+
+</script>
+
+<script type="text/javascript">
+
+
+
+    //Demo
+    layui.use('form', function() {
+        var form = layui.form;
+        //监听提交
+        form.on('submit(formDemo)', function(data) {
+            layer.msg(JSON.stringify(data.field));
+            sub("fm", function(obj) {
+                if (obj.code == 1) {
+                    alert(obj.info)
+                    location.href = "index.html";
+                } else {
+                    //layer.msg(obj.msg);
+                }
+            })
+        });
+    });
+    var app=new Vue({
+        el: "#fm2",
+        data:{
+            obj:{
+
+            }
+        }
+    });
+
+
+</script>
+
+</body>
+</html>
