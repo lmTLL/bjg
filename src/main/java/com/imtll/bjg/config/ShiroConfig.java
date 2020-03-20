@@ -48,11 +48,15 @@ public class ShiroConfig {
         //设置放行和拦截的资源
         Map<String,String> map=new HashMap<>();
         //放行静态资源 css、js、图片 最后都在同一个文件夹中
-        map.put("/media/**","anon");
-        map.put("/login.html","anon");
-        map.put("/userlogin.do","anon");
+//        map.put("/media/**","anon");
+//        map.put("/login.html","anon");
+//        map.put("/index.html","anon");
+//        map.put("/register.html","anon");
+//        map.put("/login.do","anon");
+//        map.put("/register.do","anon");
         //剩下全部拦截
-        map.put("/**","authc");
+//        map.put("/**","authc");
+        map.put("/**","anon");
         //anon 表示不用登录就可以访问
         //authc  必须登录之后才可以访问
 

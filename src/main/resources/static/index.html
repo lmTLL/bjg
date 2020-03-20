@@ -27,7 +27,7 @@
 <script src="https://cdn.jsdelivr.net/npm/vue"></script>
 
     <div class="container">
-        <div class="row" style="height: 50px; background-color: #407380; margin-top: 20px">
+        <div class="row" style="height: 50px; background-color: #393d49; margin-top: 20px">
             <div class="col-lg-12">
                 <div class="row" >
                     <div class="col-lg-6" style="padding-left: 50px">
@@ -37,6 +37,7 @@
                                     <span>
                                         <a href="index.html">
                                             <img style="height: 40px" src="images/bjg.png">
+
                                         </a>
                                     </span>
 
@@ -133,7 +134,7 @@
             <div class="col-lg-4">
                 <div class="input-group" style="margin-top: 20px">
                     <span class="input-group-btn" style="padding-left: 160px">
-                        <a href="pullgoos.html">
+                        <a href="pullgoods.html">
                             <button class="btn btn-default" type="button" style="background-color: #407380; color: #ffffff; width: 100px">
                             <span>
                                 添加商品
@@ -199,7 +200,6 @@
                 </div>
             </div>
 
-
             <!--分页-->
             <div class="row" >
                 <div class="col-lg-12" style="margin-top: 30px">
@@ -219,44 +219,93 @@
 <script>
 
 
-    var layer;
-    layui.use(['laypage','layer'], function(){
-        var laypage = layui.laypage;
 
+    //layui的分页插件和弹出窗
+    var layer,laypage;
+    layui.use(['laypage','layer'], function() {
+        laypage = layui.laypage;
+        layer = layui.layer;
         //执行一个laypage实例
         laypage.render({
             elem: 'dvpage' //注意，这里的 test1 是 ID，不用加 # 号
-            ,count: 1000 //数据总数，从服务端得到
+            , count: 50 //数据总数，从服务端得到
+            ,jump: function (obj, first) {
+                //obj包含了当前分页的所有参数，比如：
+                loadData(obj.curr, obj.limit);
+            }
+            ,layout:['limit','prev', 'page','skip', 'next']
+            ,limits:[20, 50, 100]
         });
     });
+    //分页列表数据
+    var appdata=new Vue({
+        el:"#dvdata",
+        data:{
+            obj:{
+                code:1,
+                spdetail:true,
+                data:[]
+            }
+        },
+        methods: {
+
+            spdetail: function (obj) {
+
+                layer.open(
+                    {
+                        type: 1,
+                        title: "编辑用户信息",
+                        content: $("#fmadd"),
+                        area: ['1000px', '800px'],
+                        btn: ['保存', '取消'],
+                        yes: function (index, layero) {
+                            layer.msg("新增数据成功")
+                            layer.close(index);
+                        }
+                    });
+            }
+        }
+    });
+
+    //分页加载数据
+    function loadData(page,limit) {
+        $.get("queryAllGoods.do","page="+page+"&limit="+limit,
+            function (obj) {
+                appdata.obj=obj;
+                if(obj.spdetail){
+                    //发起请求，获取所有的角色
+                    $.get("queryAllGoods.do",null,function (obj) {
+                        userdata.roles=obj.data;
+                    })
+                }
+            });
+    }
 
 
 
-
-$(function (){
+/*$(function (){
     $.ajax({
-        url:"selectAllGoods.do",
+        url:"queryAllGoods.do",
         method:"get",
         async: false,
         success:function (data) {
             if(data.code == 1){
-                ladate(data.info);
+                ladate(data.data);
             }
         }
 
     })
-})
+})*/
 
-    function onsearch() {
+ /*   function onsearch() {
         $.ajax({
             type:"get",
-            url:"findAllLike.do",
+            url:"queryGoodsByLike.do",
             data:$("form").serialize(),
             dataType:"json",
-            async: false,
             success:function (data) {
                 if(data.code==1){
-                    ladate(data.info);
+                    ladate(data.data);
                 }
             }
         })
@@ -311,7 +360,7 @@ $(function (){
             async: false,
             success:function (data) {
                 if(data.code == 1){
-                    typedate(data.info);
+                    typedate(data.data);
                 }
             }
 
@@ -329,25 +378,25 @@ $(function (){
             },
             methods:{
                 spdetail1:function (id) {
-                   /* layer.msg('你查看商品：id='+id);*/
+                   /!* layer.msg('你查看商品：id='+id);*!/
                     $.ajax({
                         type:"get",
-                        url:"selectByType.do",
+                        url:"queryGoodsByType.do",
                         data:"id="+id,
                         dataType:"json",
                         async: false,
                         success:function (data) {
                             if(data.code==1){
-                                ladate(data.info);
+                                ladate(data.data);
                             }
-                        }
+
+                     }
                     })
                 }
             }
         })
     }
-
-
+*/
 
 </script>
 
@@ -355,3 +404,61 @@ $(function (){
 
 </body>
 </html>
+<div id="fmadd" class="layui-container" style="display: none;margin-top: 20px;">
+    <form class="layui-form" action="">
+        <div class="layui-form-item">
+            <label class="layui-form-label">输入框</label>
+            <div class="layui-input-block">
+                <input type="text" name="title" required  lay-verify="required" placeholder="请输入标题" autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">密码框</label>
+            <div class="layui-input-inline">
+                <input type="password" name="password" required lay-verify="required" placeholder="请输入密码" autocomplete="off" class="layui-input">
+            </div>
+            <div class="layui-form-mid layui-word-aux">辅助文字</div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">选择框</label>
+            <div class="layui-input-block">
+                <select name="city" lay-verify="required">
+                    <option value=""></option>
+                    <option value="0">北京</option>
+                    <option value="1">上海</option>
+                    <option value="2">广州</option>
+                    <option value="3">深圳</option>
+                    <option value="4">杭州</option>
+                </select>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">复选框</label>
+            <div class="layui-input-block">
+                <input type="checkbox" name="like[write]" title="写作">
+                <input type="checkbox" name="like[read]" title="阅读" checked>
+                <input type="checkbox" name="like[dai]" title="发呆">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">开关</label>
+            <div class="layui-input-block">
+                <input type="checkbox" name="switch" lay-skin="switch">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">单选框</label>
+            <div class="layui-input-block">
+                <input type="radio" name="sex" value="男" title="男">
+                <input type="radio" name="sex" value="女" title="女" checked>
+            </div>
+        </div>
+        <div class="layui-form-item layui-form-text">
+            <label class="layui-form-label">文本域</label>
+            <div class="layui-input-block">
+                <textarea name="desc" placeholder="请输入内容" class="layui-textarea"></textarea>
+            </div>
+        </div>
+
+    </form>
+</div>

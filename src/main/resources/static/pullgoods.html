@@ -183,13 +183,8 @@
                 <div class="layui-input-block">
                     <button class="layui-btn" lay-submit lay-filter="formDemo">立即提交</button>
                     <button type="reset" class="layui-btn layui-btn-primary">重置</button>
-                </div>
-            </div>
-        </form>
-    </div>
-
-**************************************************************************************************************-->
-    <form style="margin-top: 20px" class="layui-form" action="saveGoods.do" method="post" enctype="multipart/form-data">
+********************************************************************************-->
+    <form id="fm1" style="margin-top: 20px" class="layui-form" action="#" method="post" onsubmit="return false;" enctype="multipart/form-data">
 
     <div class="publish-main layui-form layui-form-pane">
         <div style="padding-left: 450px">
@@ -242,24 +237,24 @@
         <div class="layui-form-item input-line">
             <label class="layui-form-label">分类</label>
             <div class="layui-input-inline">
-                <select name="categorys" id="categorys">
+                <select name="tid" id="categorys">
                     <option value="">请选择分类</option>
 
                     <option data-cid="1" value="1">手机</option>
 
                     <option data-cid="2" value="2">电脑</option>
 
-                    <option data-cid="4" value="4">配件</option>
+                    <option data-cid="3" value="3">配件</option>
 
-                    <option data-cid="5" value="5">电器</option>
+                    <option data-cid="4" value="4">电器</option>
 
-                    <option data-cid="6" value="6">书籍</option>
+                    <option data-cid="5" value="5">书籍</option>
 
-                    <option data-cid="7" value="7">娱乐</option>
+                    <option data-cid="6" value="6">娱乐</option>
 
-                    <option data-cid="8" value="8">运动</option>
+                    <option data-cid="7" value="7">运动</option>
 
-                    <option data-cid="9" value="9">代步</option>
+                    <option data-cid="8" value="8">代步</option>
 
                 </select>
             </div>
@@ -271,59 +266,50 @@
                 <input type="text" name="tradingaddress" autocomplete="off" placeholder="请输入交易地址" class="layui-input goods-address">
             </div>
         </div>
-        <div class="layui-form-item input-line" id="phoneNumber">
+        <div class="layui-form-item input-line" id="phone">
             <label class="layui-form-label">手机号</label>
             <div class="layui-input-inline">
-                <input type="text" name="" autocomplete="off" placeholder="请输入手机号" class="layui-input phone-number" >
+                <input type="text" name="phone" autocomplete="off" placeholder="请输入手机号" class="layui-input phone-number" >
             </div>
             <label class="layui-form-label">QQ号</label>
             <div class="layui-input-inline">
-                <input type="text" name="" autocomplete="off" placeholder="请输入QQ号" class="layui-input qq-number">
-            </div>
-            <label class="layui-form-label">微信号</label>
-            <div class="layui-input-inline">
-                <input type="text" name="" autocomplete="off" placeholder="请输入微信号" class="layui-input wx-number">
+                <input type="text" name="qq" autocomplete="off" placeholder="请输入QQ号" class="layui-input qq-number">
             </div>
         </div>
-        <!-- <div class="layui-form-item input-line" id="qqNumber">
-            <label class="layui-form-label">QQ号</label>
-            <div class="layui-input-inline">
-                <input type="text" name="title" autocomplete="off" placeholder="请输入QQ号" class="layui-input">
-            </div>
-          </div>
-        <div class="layui-form-item input-line" id="wxNumber">
-            <label class="layui-form-label">微信号</label>
-            <div class="layui-input-inline">
-                <input type="text" name="title" autocomplete="off" placeholder="请输入微信号" class="layui-input">
-            </div>
-          </div> -->
         <div class="publish-submit" style="contain: content">
-            <button class="layui-btn submit">确认发布</button>
+            <button class="layui-btn" onclick="tj()">确认发布</button>
             <button type="reset" class="layui-btn" style="width: 100px">重置</button>
         </div>
     </div>
     </form>
-
-
-
     </div>
-
-
-
-
     <script>
         //Demo
         layui.use(['form','element'], function(){
             var form = layui.form;
             var element=layui.element;
             //监听提交
-            form.on('submit(formDemo)', function(data){
+            /*form.on('submit(tj)', function(data){
                 layer.msg(JSON.stringify(data.field));
                 window.location.href="index.html";
-                return false;
-            });
+
+            });*/
         });
+
+
     </script>
+
+<script>
+    function tj() {
+        sub("fm1",function (obj) {
+            if(obj.code==1){
+                location.href="index.html"
+            }else{
+                alert("添加失败");
+            }
+        })
+    }
+</script>
 
 </div>
 
